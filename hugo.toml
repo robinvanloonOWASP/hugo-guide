@@ -1,0 +1,5 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'OWASP Security Champions Guide'
+theme = 'ananke'
+sectionPagesMenu = 'main'
