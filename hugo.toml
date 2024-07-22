@@ -2,4 +2,25 @@ baseURL = 'https://example.org/'
 languageCode = 'en-us'
 title = 'OWASP Security Champions Guide'
 theme = 'ananke'
-sectionPagesMenu = 'main'
+
+[menus]
+  [[menus.main]]
+    name = 'Introduction'
+    pageRef = '/introduction'
+    weight = 10
+  [[menus.main]]
+    name = 'Manifesto'
+    pageRef = '/manifesto'
+    weight = 20
+  [[menus.main]]
+    name = 'Principles'
+    pageRef = '/principles'
+    weight = 30
+  [[menus.main]]
+    name = 'Posts'
+    pageRef = '/posts'
+    weight = 40
+  [[menus.main]]
+    name = 'Get involved'
+    pageRef = '/getinvolved'
+    weight = 50

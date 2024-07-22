@@ -1,6 +1,5 @@
 +++
 title = 'Introduction'
-menus = 'main'
 +++
 
 ![Image alt](https://robinvanloonowasp.github.io/mkdocs-guide/assets/images/OWASP%20Security%20Champions%20Guide%20logo%20SBS.png)

@@ -1,7 +1,6 @@
 +++
 title = 'Get involved'
 date = 2024-07-21
-menus = 'main'
 +++
 
 If you are running a Security Champions Program, or starting one, contact us via [LinkedIn message](https://www.linkedin.com/company/owasp-security-champions-guide/)!
