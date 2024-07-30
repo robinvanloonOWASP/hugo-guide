@@ -17,10 +17,19 @@ theme = 'ananke'
     pageRef = '/principles'
     weight = 30
   [[menus.main]]
+    name = 'Maturity model'
+    pageRef = '/maturitymodel'
+    weight = 40
+  [[menus.main]]
     name = 'Posts'
     pageRef = '/posts'
-    weight = 40
+    weight = 50
   [[menus.main]]
     name = 'Get involved'
     pageRef = '/getinvolved'
-    weight = 50
+    weight = 60
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
