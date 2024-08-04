@@ -1,7 +1,7 @@
 +++
 title = 'Maturity model'
 +++
-<link rel="stylesheet" href="/css/custom.css">
+<link rel="stylesheet" href="https://robinvanloonowasp.github.io/hugo-guide/css/custom.css">
 
 <table border=0 width=100%> 
     <tr>
