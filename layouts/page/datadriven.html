@@ -1,0 +1,38 @@
+{{ partial "page-header.html" . }}
+
+{{ $data := dict }}
+{{ $u := "http://108.143.142.147:1337/api/principles" }}
+{{ with resources.GetRemote $u }}
+  {{ with .Err }}
+    {{ errorf "%s" . }}
+  {{ else }}
+    {{ $data = . | transform.Unmarshal }}
+  {{ end }}
+{{ else }}
+  {{ errorf "Unable to get remote resource %q" $u }}
+{{ end }}
+
+{{ $data2 := dict }}
+{{ $u := "http://108.143.142.147:1337/api/blogs" }}
+{{ with resources.GetRemote $u }}
+  {{ with .Err }}
+    {{ errorf "%s" . }}
+  {{ else }}
+    {{ $data2 = . | transform.Unmarshal }}
+  {{ end }}
+{{ else }}
+  {{ errorf "Unable to get remote resource %q" $u }}
+{{ end }}
+
+
+<h1>Testing data driven content</h1>
+
+<h2>Principles</h2>
+{{ range first 5 $data.data }}
+    <li><a href="todo" target="_blank">{{ .Title }}</a></li>
+{{ end }}
+
+<h2>Blog</h2>
+{{ range first 5 $data2.data }}
+    <li><a href="todo" target="_blank">{{ .Author }}: {{ .Title }} ({{ .Date }})</a></li>
+{{ end }}
