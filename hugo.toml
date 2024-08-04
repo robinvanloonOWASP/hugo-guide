@@ -18,8 +18,10 @@ theme = 'ananke'
     weight = 30
   [[menus.main]]
     name = 'Maturity model'
-    pageRef = '/maturitymodel'
+    pageRef = '/maturitymodel/'
+    identifier = 'maturitymodel'
     weight = 40
+    hasChildren = true
   [[menus.main]]
     name = 'Posts'
     pageRef = '/posts'
@@ -28,6 +30,26 @@ theme = 'ananke'
     name = 'Get involved'
     pageRef = '/getinvolved'
     weight = 60
+  [[menus.main]]
+    name = 'Data Driven'
+    pageRef = '/datadriven'
+    weight = 70
+
+  [[menus.main]]
+    name = 'Introduction'
+    parent = 'maturitymodel'
+    pageRef = '/maturitymodel/introduction'
+    weight = 10
+  [[menus.main]]
+    name = 'Phases'
+    parent = 'maturitymodel'
+    pageRef = '/maturitymodel/phases'
+    weight = 20
+  [[menus.main]]
+    name = 'Principles'
+    parent = 'maturitymodel'
+    pageRef = '/maturitymodel/principles'
+    weight = 20
 
 [markup]
   [markup.goldmark]
