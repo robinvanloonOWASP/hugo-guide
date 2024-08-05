@@ -1,4 +1,21 @@
-{{ partial "page-header.html" . }}
+{{ define "header" }}
+   {{/* We can override any block in the baseof file be defining it in the template */}}
+  {{ partial "page-header.html" . }}
+{{ end }}
+
+{{ define "main" }}
+  {{ $section := .Site.GetPage "section" .Section }}
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          {{/*
+          CurrentSection allows us to use the section title instead of inferring from the folder.
+          https://gohugo.io/variables/page/#section-variables-and-methods
+          */}}
+        
+      </aside>
+      {{ partial "social-share.html" . }}
+    </header>
 
 {{ $data := dict }}
 {{ $u := "http://108.143.142.147:1337/api/principles" }}
@@ -25,14 +42,28 @@
 {{ end }}
 
 
-<h1>Testing data driven content</h1>
+<h1 class="f1 athelas mt3 mb1">
+  {{- .Title -}}
+</h1>
 
-<h2>Principles</h2>
-{{ range first 5 $data.data }}
-    <li><a href="todo" target="_blank">{{ .Title }}</a></li>
-{{ end }}
+<div class="nested-copy-line-height lh-copy {{ $.Param "post_content_classes"  | default "serif"}} f4 nested-links {{ $.Param "text_color" | default "mid-gray" }} {{ cond (eq $.Site.Language.LanguageDirection "rtl") "pl4-l" "pr4-l" }} w-two-thirds-l">
+  <br>
+  <h2>Principles</h2>
+  {{ range first 5 $data.data }}
+      <li><a href="todo" target="_blank">{{ .Title }}</a></li>
+  {{ end }}
+  <br>
+  <h2>Blog</h2>
+  {{ range first 5 $data2.data }}
+      <li><a href="todo" target="_blank">{{ .Author }}: {{ .Title }} ({{ .Date }})</a></li>
+  {{ end }}
+</div>
 
-<h2>Blog</h2>
-{{ range first 5 $data2.data }}
-    <li><a href="todo" target="_blank">{{ .Author }}: {{ .Title }} ({{ .Date }})</a></li>
+
+<aside class="w-30-l mt6-l">
+  {{- partial "menu-contextual.html" . -}}
+</aside>
+
+</article>
+
 {{ end }}
