@@ -36,20 +36,20 @@ theme = 'ananke'
     weight = 70
 
   [[menus.main]]
-    name = 'Introduction'
+    name = 'IntroductionMM'
     parent = 'maturitymodel'
     pageRef = '/maturitymodel/introduction'
-    weight = 10
+    weight = 110
   [[menus.main]]
     name = 'Phases'
     parent = 'maturitymodel'
     pageRef = '/maturitymodel/phases'
-    weight = 20
+    weight = 120
   [[menus.main]]
     name = 'Principles'
     parent = 'maturitymodel'
     pageRef = '/maturitymodel/principles'
-    weight = 20
+    weight = 130
 
 [markup]
   [markup.goldmark]
